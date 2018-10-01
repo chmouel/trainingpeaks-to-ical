@@ -30,8 +30,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-TITLE = "Toursnman2019"
-DEBUT = '30 December 2018'
+TITLE = "Ironman-Nice-2019"
+DEBUT = '13 January 2019'
 PERIOD_MONTHS = 7
 GARMIN_EXPORT_PATH = "/tmp/" + TITLE + "-Training"
 REMOTEW = "http://chmouel.com" + GARMIN_EXPORT_PATH
@@ -76,7 +76,7 @@ def main(content, tpcnx):
             event.description = current['description'].replace('\r', '\n')
 
         if current['coachComments']:
-            event.description += "\n\nCommentaire du Coach:\n"
+            event.description += "\n\nCommentaire du Coach Chmou:\n"
             event.description += current['coachComments'].replace('\r', '\n')
 
         if current['structure']:
@@ -101,7 +101,7 @@ def main(content, tpcnx):
                             f.write(chunk)
 
             if event.description:
-                event.description += "\n\nFichier pour Garmin:\n"
+                event.description += "\n\Le fichier a importer dans son Garmin:\n"
                 event.description += REMOTEW + "/" + fitfile
 
         event.begin = dt.replace(hour=6, minute=00)
